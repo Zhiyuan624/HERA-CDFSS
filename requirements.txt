@@ -1,0 +1,13 @@
+torch
+torchvision
+torchaudio
+scipy
+pandas
+matplotlib
+seaborn
+opencv-python
+scikit-image
+safetensors
+timm
+tensorflow
+tensorboardX
