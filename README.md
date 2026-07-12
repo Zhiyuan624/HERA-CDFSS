@@ -44,9 +44,6 @@ DeepGlobe is a satellite-image segmentation dataset with substantial variations 
 
 - **Official Website:** [DeepGlobe](http://deepglobe.org/)
 - **Download:** [Kaggle](https://www.kaggle.com/datasets/balraj98/deepglobe-land-cover-classification-dataset)
-- **Preprocessing References:**
-  - [IFA preprocessing script](https://github.com/niejiahao1998/IFA/tree/master/data/preprocess_deepglobe.py)
-  - [PATNet repository](https://github.com/slei109/PATNet)
 
 #### ISIC 2018
 ISIC 2018 contains dermoscopic skin-lesion images with irregular boundaries and low-contrast foreground regions.
@@ -55,9 +52,7 @@ ISIC 2018 contains dermoscopic skin-lesion images with irregular boundaries and 
 - **Download:** [ISIC Archive](https://challenge.isic-archive.com/data#2018)  
   Registration and login may be required.
 - **Class Information:** `data/isic/class_id.csv`
-- **Preprocessing References:**
-  - [IFA preprocessing script](https://github.com/niejiahao1998/IFA/tree/master/data/preprocess_isic.py)
-  - [PATNet repository](https://github.com/slei109/PATNet)
+- **Preprocessing References:** [PATNet repository](https://github.com/slei109/PATNet)
 
 #### Chest X-ray
 The Chest X-ray dataset contains radiographic images and lung masks, introducing substantial grayscale and structural domain shifts.
@@ -66,7 +61,6 @@ The Chest X-ray dataset contains radiographic images and lung masks, introducing
 - **Download:** [Kaggle](https://www.kaggle.com/datasets/nikhilpandey360/chest-xray-masks-and-labels)
 
 #### FSS-1000
-
 FSS-1000 is a large-scale few-shot segmentation dataset containing 1,000 object categories from natural images.
 
 - **Official Repository:** [FSS-1000](https://github.com/HKUSTCV/FSS-1000)
