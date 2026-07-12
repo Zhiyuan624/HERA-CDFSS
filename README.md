@@ -38,13 +38,13 @@ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
 
 ### Target Domains
 
-#### DeepGlobe
+#### ▸ DeepGlobe
 DeepGlobe is a satellite-image segmentation dataset with substantial variations in texture, scale, and spatial layout.
 
 - **Official Website:** [DeepGlobe](http://deepglobe.org/)
 - **Download:** [Kaggle](https://www.kaggle.com/datasets/balraj98/deepglobe-land-cover-classification-dataset)
 
-#### ISIC 2018
+#### ▸ ISIC 2018
 ISIC 2018 contains dermoscopic skin-lesion images with irregular boundaries and low-contrast foreground regions.
 
 - **Official Website:** [ISIC 2018 Challenge](http://challenge2018.isic-archive.com/)
@@ -52,13 +52,13 @@ ISIC 2018 contains dermoscopic skin-lesion images with irregular boundaries and 
 - **Class Information:** `data/isic/class_id.csv`
 - **Preprocessing References:** [DR-Adapter repository](https://github.com/Matt-Su/DR-Adapter)
 
-#### Chest X-ray
+#### ▸ Chest X-ray
 The Chest X-ray contains radiographic images and lung masks with substantial grayscale and structural variations.
 
 - **Dataset Description:** [NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/)
 - **Download:** [Kaggle](https://www.kaggle.com/datasets/nikhilpandey360/chest-xray-masks-and-labels)
 
-#### FSS-1000
+#### ▸ FSS-1000
 FSS-1000 is a large-scale few-shot segmentation dataset containing 1,000 object categories from natural images.
 
 - **Official Repository:** [FSS-1000](https://github.com/HKUSTCV/FSS-1000)
