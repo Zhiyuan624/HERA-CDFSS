@@ -287,11 +287,11 @@
 </section>
 
   
-<div class="container">
-  <section class="abstract-section">
+<section class="abstract-section">
+  <div class="abstract-container">
     <h2>Abstract</h2>
 
-    <div class="abstract-card">
+    <div class="abstract-content">
       <p>
         Vision foundation models (VFMs) have achieved strong performance across various vision tasks.
         However, it still remains challenging to apply VFMs for cross-domain few-shot segmentation
@@ -306,13 +306,12 @@
         To address these issues, we propose Hierarchical Exemplar Representation Adaptation
         (<strong>HERA</strong>), a three-stage select–regularize–calibrate VFM-based segmentation
         framework that learns effectively from limited labels and adapts to novel domains without
-        source-data retraining. We first design Hierarchical Layer Selection (HLS) to adaptively
-        identify the most informative VFM layer using a data-dependent Exemplar Transfer Risk (ETR)
-        computed for each candidate layer. Then, Prior-Guided Regularization (PGR) regularizes
-        interactions on the selected representation, yielding well-structured local signals for the
-        subsequent stage. Furthermore, Pixel-wise Adaptive Calibration (PAC) combines the selected
-        representation with the refined interaction maps to calibrate pixel-wise predictions,
-        producing consistent masks.
+        source-data retraining. We first design Hierarchical Layer Selection (HLS) to adaptively identify
+        the most informative VFM layer using a data-dependent Exemplar Transfer Risk (ETR) computed for
+        each candidate layer. Then, Prior-Guided Regularization (PGR) regularizes interactions on the
+        selected representation, yielding well-structured local signals for the subsequent stage.
+        Furthermore, Pixel-wise Adaptive Calibration (PAC) combines the selected representation with
+        the refined interaction maps to calibrate pixel-wise predictions, producing consistent masks.
       </p>
 
       <p>
@@ -322,8 +321,8 @@
         across multiple CD-FSS benchmarks.
       </p>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
   
   <section class="method-section">
