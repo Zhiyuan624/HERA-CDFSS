@@ -185,3 +185,16 @@ The same evaluation pipeline can be applied to other target datasets by updating
 
 > Evaluation performance may vary slightly across random seeds, GPU devices, software environments, and dataset preprocessing implementations.
 
+## Citation
+If you find HERA useful in your research, please cite our paper:
+
+```bibtex
+@inproceedings{ma2026selective,
+  title     = {Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation},
+  author    = {Ma, Junyuan and Xiang, Xunzhi and Li, Wenbin and Fan, Qi and Gao, Yang},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages     = {12385--12395},
+  year      = {2026}
+}
+```
+
