@@ -139,3 +139,43 @@ pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0
 pip install scipy pandas matplotlib seaborn
 pip install opencv-python scikit-image safetensors timm tensorflow tensorboardX
 ```
+
+## Run the Code
+
+HERA follows a **source-free test-time adaptation** setting and does not require separate source-domain training. The framework performs episode-wise layer selection, lightweight adaptation, and query prediction in a unified evaluation pipeline.
+
+Please ensure that the target dataset and DINOv3 checkpoint are prepared before running the code.
+
+### Example: DeepGlobe
+
+Run the 1-shot evaluation on DeepGlobe:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python main_hera.py \
+  --benchmark deepglobe \
+  --test_datapath ./data/DeepGlobe \
+  --backbone DINOv3 \
+  --nshot 1 \
+  --fusion on \
+  --refine auto \
+  --attn_strategy dual_attn_gauss \
+  --dinov3_repo ./dinov3 \
+  --dinov3_ckpt ./checkpoints/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+```
+
+For 5-shot evaluation, change:
+
+```bash
+--nshot 1
+```
+
+to:
+
+```bash
+--nshot 5
+```
+
+The same pipeline can be applied to other target datasets by updating `--benchmark` and `--test_datapath`.
+
+> Evaluation results may vary slightly across random seeds, GPU devices, software environments, and dataset preprocessing implementations.
+
