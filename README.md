@@ -81,7 +81,7 @@ checkpoints/
 The following results are reported using DINOv3 under the standard 1-shot and 5-shot CD-FSS evaluation protocols.
 
 | Target Dataset | 1-Shot mIoU | 5-Shot mIoU |
-|:---------------|-------------:|-------------:|
+|:--------------:|:------- ----:|:------------:|
 | DeepGlobe      | 44.6%        | 63.4%        |
 | ISIC 2018      | 61.2%        | 73.6%        |
 | Chest X-ray    | 85.8%        | 87.9%        |
@@ -94,51 +94,41 @@ The following results are reported using DINOv3 under the standard 1-shot and 5-
 After downloading and preprocessing the datasets, organize them using the following structure:
 
 ```text
-HERA-CDFSS/
-├── data/
-│   ├── VOC2012/
+HERA-CDFSS/                                           # project root
+├── data/                                             # datasets
+│   ├── VOC2012/                                      # source dataset: PASCAL VOC 2012
 │   │   ├── JPEGImages/
 │   │   └── SegmentationClassAug/
 │   │
-│   ├── DeepGlobe/
-│   │   ├── 01_train_ori/
+│   ├── DeepGlobe/                                    # target dataset: DeepGlobe
+│   │   ├── 01_train_ori/                             # original data
 │   │   ├── ...
-│   │   └── 04_train_cat/
-│   │       ├── 1/
+│   │   └── 04_train_cat/                             # processed data
+│   │       ├── 1/                                    # category
 │   │       │   └── test/
-│   │       │       ├── origin/
-│   │       │       └── groundtruth/
+│   │       │       ├── origin/                       # images
+│   │       │       └── groundtruth/                  # masks
 │   │       └── ...
 │   │
-│   ├── ISIC/
-│   │   ├── ISIC2018_Task1-2_Training_Input/
-│   │   │   ├── 1/
-│   │   │   ├── 2/
-│   │   │   └── 3/
-│   │   ├── ISIC2018_Task1_Training_GroundTruth/
+│   ├── ISIC/                                         # target dataset: ISIC 2018
+│   │   ├── ISIC2018_Task1-2_Training_Input/          # images
+│   │   │   ├── 1/                                    # category
+│   │   │   └── ...
+│   │   ├── ISIC2018_Task1_Training_GroundTruth/      # masks
 │   │   └── class_id.csv
 │   │
-│   ├── LungSegmentation/
-│   │   ├── CXR_png/
-│   │   └── masks/
+│   ├── LungSegmentation/                             # target dataset: Chest X-ray
+│   │   ├── CXR_png/                                  # images
+│   │   └── masks/                                    # masks
 │   │
-│   └── FSS-1000/
-│       ├── ab_wheel/
-│       ├── ...
-│       └── <category_name>/
+│   └── FSS-1000/                                     # target dataset: FSS-1000
+│       ├── ab_wheel/                                 # category
+│       └── ...
 │
-├── checkpoints/
-│   ├── README.md
+├── checkpoints/                                      # pretrained model checkpoints
 │   └── dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
 │
-├── common/
-├── data_util/
-├── model/
-├── scripts/
-├── util/
-├── main_hera.py
-├── requirements.txt
-└── README.md
+└── codes/                                            # source code
 ```
 
 > Dataset and checkpoint files are not included in this repository. Please download them separately and update the corresponding paths in the evaluation scripts according to your local environment.
