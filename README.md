@@ -49,13 +49,12 @@ DeepGlobe is a satellite-image segmentation dataset with substantial variations 
 ISIC 2018 contains dermoscopic skin-lesion images with irregular boundaries and low-contrast foreground regions.
 
 - **Official Website:** [ISIC 2018 Challenge](http://challenge2018.isic-archive.com/)
-- **Download:** [ISIC Archive](https://challenge.isic-archive.com/data#2018)  
-  Registration and login may be required.
+- **Download:** [ISIC Archive](https://challenge.isic-archive.com/data#2018) Registration and login may be required.
 - **Class Information:** `data/isic/class_id.csv`
 - **Preprocessing References:** [DR-Adapter repository](https://github.com/Matt-Su/DR-Adapter)
 
 #### Chest X-ray
-The Chest X-ray dataset contains radiographic images and lung masks, introducing substantial grayscale and structural domain shifts.
+The Chest X-ray contains radiographic images and lung masks with substantial grayscale and structural variations.
 
 - **Dataset Description:** [NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/)
 - **Download:** [Kaggle](https://www.kaggle.com/datasets/nikhilpandey360/chest-xray-masks-and-labels)
