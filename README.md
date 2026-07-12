@@ -142,40 +142,43 @@ pip install opencv-python scikit-image safetensors timm tensorflow tensorboardX
 
 ## Run the Code
 
-HERA follows a **source-free test-time adaptation** setting and does not require separate source-domain training. The framework performs episode-wise layer selection, lightweight adaptation, and query prediction in a unified evaluation pipeline.
-
-Please ensure that the target dataset and DINOv3 checkpoint are prepared before running the code.
-
-### Example: DeepGlobe
+HERA follows a **source-free test-time adaptation** setting and does not require separate source-domain training. Please ensure that the target dataset and DINOv3 checkpoint are prepared before running the code. Here taking the Deepglobe dataset as an example.
 
 Run the 1-shot evaluation on DeepGlobe:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python main_hera.py \
-  --benchmark deepglobe \
-  --test_datapath ./data/DeepGlobe \
+  --test_datapath ./data/deepglobe \
   --backbone DINOv3 \
+  --benchmark deepglobe \
+  --fold 0 \
   --nshot 1 \
+  --refine always \
   --fusion on \
-  --refine auto \
+  --feat_id 12 13 14 15 16 17 18 19 20 21 22 23 \
   --attn_strategy dual_attn_gauss \
-  --dinov3_repo ./dinov3 \
-  --dinov3_ckpt ./checkpoints/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+  --logdir ./logs/deepglobe \
+  --logfile Dinov3_deepglobe_shot1.txt 
 ```
 
-For 5-shot evaluation, change:
+For 5-shot evaluation on DeepGlobe:
 
 ```bash
---nshot 1
-```
-
-to:
-
-```bash
---nshot 5
+CUDA_VISIBLE_DEVICES=0 python main_hera.py \
+  --test_datapath ./data/deepglobe \
+  --backbone DINOv3 \
+  --benchmark deepglobe \
+  --fold 0 \
+  --nshot 5 \
+  --refine auto \
+  --fusion on \
+  --feat_id 12 13 14 15 16 17 18 19 20 21 22 23 \
+  --attn_strategy dual_attn_gauss \
+  --logdir ./logs/deepglobe \
+  --logfile Dinov3_deepglobe_shot5.txt
 ```
 
 The same pipeline can be applied to other target datasets by updating `--benchmark` and `--test_datapath`.
 
-> Evaluation results may vary slightly across random seeds, GPU devices, software environments, and dataset preprocessing implementations.
+> Please note that the performances may flutuate within a small range because of differnet batch-sizes, seeds, devices, and environments.
 
