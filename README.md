@@ -185,7 +185,7 @@ The same evaluation pipeline can be applied to other target datasets by updating
 
 Evaluation performance may vary slightly across random seeds, GPU devices, software environments, and dataset preprocessing implementations.
 
-> HERA is designed as a general framework for vision foundation models (VFMs). The current repository provides the standard DINOv3 implementation as the default reference. To use other VFMs, please follow the model-specific comments in the code and replace the corresponding backbone loading, feature extraction, layer configuration, and attention interfaces accordingly.
+> HERA is designed as a general framework for vision foundation models (VFMs). The current repository provides the standard DINOv3 implementation as the default reference. To use other VFMs, please follow the code comments and update the model-specific components accordingly.
 
 
 ## Citation
