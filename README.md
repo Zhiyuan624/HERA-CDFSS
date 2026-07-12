@@ -49,7 +49,7 @@ DeepGlobe is a satellite-image segmentation dataset with substantial variations 
 ISIC 2018 contains dermoscopic skin-lesion images with irregular boundaries and low-contrast foreground regions.
 
 - **Official Website:** [ISIC 2018 Challenge](http://challenge2018.isic-archive.com/)
-- **Download:** [ISIC Archive](https://challenge.isic-archive.com/data#2018) Registration and login may be required.
+- **Download (must login):** [ISIC Archive](https://challenge.isic-archive.com/data#2018)
 - **Class Information:** `data/isic/class_id.csv`
 - **Preprocessing References:** [DR-Adapter repository](https://github.com/Matt-Su/DR-Adapter)
 
