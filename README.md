@@ -141,7 +141,9 @@ pip install opencv-python scikit-image safetensors timm tensorflow tensorboardX
 ```
 
 ## Run the Code
-HERA follows a **source-free test-time adaptation** setting and does not require separate source-domain training. Please ensure that the target dataset and DINOv3 checkpoint are properly prepared before running the code. We use DeepGlobe as an example below.
+HERA follows a **source-free test-time adaptation** setting and does not require separate source-domain training. 
+
+Please ensure that the target dataset and DINOv3 checkpoint are properly prepared before running the code. We use DeepGlobe as an example below.
 
 Run the 1-shot evaluation on DeepGlobe:
 
