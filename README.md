@@ -94,6 +94,7 @@ After downloading and preprocessing the datasets, organize them using the follow
 
 ```text
 HERA-CDFSS/                                           # project root
+|── codes/                                            # source code
 ├── data/                                             # datasets
 │   ├── VOC2012/                                      # source dataset: PASCAL VOC 2012
 │   │   ├── JPEGImages/
@@ -126,8 +127,6 @@ HERA-CDFSS/                                           # project root
 │
 ├── checkpoints/                                      # pretrained model checkpoints
 │   └── dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
-│
-└── codes/                                            # source code
 ```
 
 ## Environment Setup
@@ -137,5 +136,6 @@ conda create -n hera python=3.10 -y
 conda activate hera
 
 pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0
-pip install scipy pandas matplotlib seaborn opencv-python scikit-image safetensors timm tensorflow tensorboardX
+pip install scipy pandas matplotlib seaborn
+pip install opencv-python scikit-image safetensors timm tensorflow tensorboardX
 ```
