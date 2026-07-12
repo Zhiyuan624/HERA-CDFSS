@@ -16,8 +16,10 @@ Official implementation of our CVPR 2026 paper [Selective, Regularized, and Cali
 
 The proposed **HERA** harnesses vision foundation models for cross-domain few-shot semantic segmentation through selective feature extraction, regularized adaptation, and calibrated attention refinement. It dynamically identifies task-relevant representations from intermediate layers, integrates complementary multi-level features, and improves prediction reliability under severe domain shifts while requiring only a few annotated support examples.
 
-## Datasets
-We evaluate HERA on the standard cross-domain few-shot semantic segmentation benchmarks. The source-domain dataset follows the conventional CD-FSS setting, while HERA is evaluated directly on the target domains without source-data retraining.
+## Data Preparation
+We evaluate HERA on the standard cross-domain few-shot semantic segmentation benchmarks. 
+
+The source-domain dataset follows the conventional CD-FSS setting, while HERA is evaluated directly on the target domains without source-data retraining.
 
 ### Source Domain
 
@@ -64,6 +66,7 @@ The Chest X-ray dataset contains radiographic images and lung masks, introducing
 - **Download:** [Kaggle](https://www.kaggle.com/datasets/nikhilpandey360/chest-xray-masks-and-labels)
 
 #### FSS-1000
+
 FSS-1000 is a large-scale few-shot segmentation dataset containing 1,000 object categories from natural images.
 
 - **Official Repository:** [FSS-1000](https://github.com/HKUSTCV/FSS-1000)
