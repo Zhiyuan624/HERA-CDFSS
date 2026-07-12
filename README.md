@@ -64,3 +64,81 @@ FSS-1000 is a large-scale few-shot segmentation dataset containing 1,000 object 
 
 - **Official Repository:** [FSS-1000](https://github.com/HKUSTCV/FSS-1000)
 - **Download:** [Google Drive](https://drive.google.com/file/d/16TgqOeI_0P41Eh3jWQlxlRXG9KIqtMgI/view)
+
+## Pretrained Models and Benchmark Results
+The default implementation uses **DINOv3 ViT-L/16** as the vision foundation model.
+
+- **Pretrained Weights:** [Download from Google Drive](https://drive.google.com/file/d/1Oni-R5xIDFv1-QcIFOoeJ1iG8ciS4Rv4/view?usp=sharing)
+
+After downloading, place the checkpoint in the `checkpoints/` directory.
+
+```text
+checkpoints/
+└── dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+```
+
+### Performance
+The following results are reported using DINOv3 under the standard 1-shot and 5-shot CD-FSS evaluation protocols.
+
+| Target Dataset | 1-Shot mIoU | 5-Shot mIoU |
+|:---------------|-------------:|-------------:|
+| DeepGlobe      | 44.6%        | 63.4%        |
+| ISIC 2018      | 61.2%        | 73.6%        |
+| Chest X-ray    | 85.8%        | 87.9%        |
+| FSS-1000       | 81.6%        | 86.7%        |
+| **Average**    | **68.3%**    | **77.9%**    |
+
+---
+
+## Dataset Organization
+After downloading and preprocessing the datasets, organize them using the following structure:
+
+```text
+HERA-CDFSS/
+├── data/
+│   ├── VOC2012/
+│   │   ├── JPEGImages/
+│   │   └── SegmentationClassAug/
+│   │
+│   ├── DeepGlobe/
+│   │   ├── 01_train_ori/
+│   │   ├── ...
+│   │   └── 04_train_cat/
+│   │       ├── 1/
+│   │       │   └── test/
+│   │       │       ├── origin/
+│   │       │       └── groundtruth/
+│   │       └── ...
+│   │
+│   ├── ISIC/
+│   │   ├── ISIC2018_Task1-2_Training_Input/
+│   │   │   ├── 1/
+│   │   │   ├── 2/
+│   │   │   └── 3/
+│   │   ├── ISIC2018_Task1_Training_GroundTruth/
+│   │   └── class_id.csv
+│   │
+│   ├── LungSegmentation/
+│   │   ├── CXR_png/
+│   │   └── masks/
+│   │
+│   └── FSS-1000/
+│       ├── ab_wheel/
+│       ├── ...
+│       └── <category_name>/
+│
+├── checkpoints/
+│   ├── README.md
+│   └── dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+│
+├── common/
+├── data_util/
+├── model/
+├── scripts/
+├── util/
+├── main_hera.py
+├── requirements.txt
+└── README.md
+```
+
+> Dataset and checkpoint files are not included in this repository. Please download them separately and update the corresponding paths in the evaluation scripts according to your local environment.
