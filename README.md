@@ -24,7 +24,7 @@ The source-domain dataset follows the conventional CD-FSS setting, while HERA is
 
 ### Source Domain
 
-#### PASCAL VOC 2012
+#### ▸ PASCAL VOC 2012
 PASCAL VOC 2012 is commonly used as the source-domain dataset in CD-FSS.
 
 - **Official Website:** [PASCAL VOC](http://host.robots.ox.ac.uk/pascal/VOC/)
