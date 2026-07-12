@@ -14,7 +14,7 @@ Official implementation of our CVPR 2026 paper [Selective, Regularized, and Cali
   <img src="assets/method.jpg" width="100%">
 </p>
 
-The proposed **HERA** harnesses vision foundation models for cross-domain few-shot semantic segmentation through selective feature extraction, regularized adaptation, and calibrated attention refinement. It dynamically identifies task-relevant representations from intermediate layers, integrates complementary multi-level features, and improves prediction reliability under severe domain shifts while requiring only a few annotated support examples.
+The proposed **HERA** harnesses vision foundation models for cross-domain few-shot semantic segmentation through selective feature extraction, regularized adaptation, and calibrated attention refinement. It dynamically identifies task-relevant representations from intermediate layers, integrates complementary multi-level features, and improves prediction reliability under severe domain shifts while requiring only a few annotated support exemplars.
 
 
 ## Data Preparation
@@ -183,7 +183,10 @@ CUDA_VISIBLE_DEVICES=0 python main_hera.py \
 
 The same evaluation pipeline can be applied to other target datasets by updating `--benchmark`, `--test_datapath`, `--logdir`, and `--logfile`.
 
-> Evaluation performance may vary slightly across random seeds, GPU devices, software environments, and dataset preprocessing implementations.
+Evaluation performance may vary slightly across random seeds, GPU devices, software environments, and dataset preprocessing implementations.
+
+> HERA is designed as a general framework for vision foundation models (VFMs). The current repository provides the standard DINOv3 implementation as the default reference. To use other VFMs, please follow the model-specific comments in the code and replace the corresponding backbone loading, feature extraction, layer configuration, and attention interfaces accordingly.
+
 
 ## Citation
 If you find HERA useful in your research, please cite our paper:
