@@ -141,8 +141,7 @@ pip install opencv-python scikit-image safetensors timm tensorflow tensorboardX
 ```
 
 ## Run the Code
-
-HERA follows a **source-free test-time adaptation** setting and does not require separate source-domain training. Please ensure that the target dataset and DINOv3 checkpoint are prepared before running the code. Here taking the Deepglobe dataset as an example.
+HERA follows a **source-free test-time adaptation** setting and does not require separate source-domain training. Please ensure that the target dataset and DINOv3 checkpoint are properly prepared before running the code. We use DeepGlobe as an example below.
 
 Run the 1-shot evaluation on DeepGlobe:
 
@@ -158,10 +157,10 @@ CUDA_VISIBLE_DEVICES=0 python main_hera.py \
   --feat_id 12 13 14 15 16 17 18 19 20 21 22 23 \
   --attn_strategy dual_attn_gauss \
   --logdir ./logs/deepglobe \
-  --logfile Dinov3_deepglobe_shot1.txt 
+  --logfile Dinov3_deepglobe_shot1.txt
 ```
 
-For 5-shot evaluation on DeepGlobe:
+Run the 5-shot evaluation on DeepGlobe:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python main_hera.py \
@@ -178,7 +177,7 @@ CUDA_VISIBLE_DEVICES=0 python main_hera.py \
   --logfile Dinov3_deepglobe_shot5.txt
 ```
 
-The same pipeline can be applied to other target datasets by updating `--benchmark` and `--test_datapath`.
+The same evaluation pipeline can be applied to other target datasets by updating `--benchmark`, `--test_datapath`, `--logdir`, and `--logfile`.
 
-> Please note that the performances may flutuate within a small range because of differnet batch-sizes, seeds, devices, and environments.
+> Evaluation performance may vary slightly across random seeds, GPU devices, software environments, and dataset preprocessing implementations.
 
