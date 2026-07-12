@@ -264,23 +264,34 @@
     <div class="buttons">
       <a class="button" href="https://arxiv.org/abs/2605.19340" target="_blank" rel="noopener noreferrer">
         <i class="ai ai-arxiv"></i>
-        <span>Paper</span>
+        <span>arXiv</span>
       </a>
 
       <a class="button" href="https://github.com/Zhiyuan624/HERA-CDFSS" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-github"></i>
         <span>Code</span>
       </a>
+
+      <a class="button"
+         href="https://openaccess.thecvf.com/content/CVPR2026/papers/Ma_Selective_Regularized_and_Calibrated_Harnessing_Vision_Foundation_Models_for_Cross-Domain_CVPR_2026_paper.pdf"
+         target="_blank"
+         rel="noopener noreferrer">
+        <i class="fas fa-file-pdf"></i>
+        <span>Paper</span>
+      </a>
+
+      
     </div>
 
   </div>
 </section>
 
+  
 <div class="container">
-
-  <section>
+  <section class="abstract-section">
     <h2>Abstract</h2>
-    <div class="content">
+
+    <div class="abstract-card">
       <p>
         Vision foundation models (VFMs) have achieved strong performance across various vision tasks.
         However, it still remains challenging to apply VFMs for cross-domain few-shot segmentation
@@ -292,15 +303,16 @@
       </p>
 
       <p>
-        To address these issues, we propose Hierarchical Exemplar Representation Adaptation (HERA),
-        a three-stage select–regularize–calibrate VFM-based segmentation framework that learns
-        effectively from limited labels and adapts to novel domains without source-data retraining.
-        We first design Hierarchical Layer Selection (HLS) to adaptively identify the most informative
-        VFM layer using a data-dependent Exemplar Transfer Risk (ETR) computed for each candidate layer.
-        Then, Prior-Guided Regularization (PGR) regularizes interactions on the selected representation,
-        yielding well-structured local signals for the subsequent stage. Furthermore, Pixel-wise Adaptive
-        Calibration (PAC) combines the selected representation with the refined interaction maps to
-        calibrate pixel-wise predictions, producing consistent masks.
+        To address these issues, we propose Hierarchical Exemplar Representation Adaptation
+        (<strong>HERA</strong>), a three-stage select–regularize–calibrate VFM-based segmentation
+        framework that learns effectively from limited labels and adapts to novel domains without
+        source-data retraining. We first design Hierarchical Layer Selection (HLS) to adaptively
+        identify the most informative VFM layer using a data-dependent Exemplar Transfer Risk (ETR)
+        computed for each candidate layer. Then, Prior-Guided Regularization (PGR) regularizes
+        interactions on the selected representation, yielding well-structured local signals for the
+        subsequent stage. Furthermore, Pixel-wise Adaptive Calibration (PAC) combines the selected
+        representation with the refined interaction maps to calibrate pixel-wise predictions,
+        producing consistent masks.
       </p>
 
       <p>
@@ -311,33 +323,56 @@
       </p>
     </div>
   </section>
+</div>
 
-  <section>
-    <h2>Method</h2>
-    <div class="method-image">
-      <img src="static/images/method.jpg" alt="Overview of HERA" onerror="this.style.display='none';">
-    </div>
-    <div class="caption">
-      <strong>Overview of HERA.</strong>
-      Hierarchical Layer Selection (HLS) estimates the leave-one-out layer risk
-      $\mathcal{R}_{\mathrm{layer}}$ and routes each episode to $\ell^\star$, selected from either
-      a single-layer candidate $\ell_{\mathrm{single}}$ or a local-fusion candidate
-      $\ell_{\mathrm{fusion}}$. At $\ell^\star$, Prior-Guided Regularization (PGR) calibrates
-      self-attention with entropy-gated Gaussian priors, while Pixel-wise Adaptive Calibration (PAC)
-      introduces residual logits $\ell_{\mathrm{sim}}$, $\ell_{\mathrm{attn}}$, and
-      $\ell_{\mathrm{img}}$, which are fused with the base logit in a select–regularize–calibrate
-      hierarchy. Here, $\mathcal{L}$, $\mathcal{U}$, and $\mathcal{H}$ denote the numbers of layers,
-      fusion candidates, and attention heads, respectively.
-    </div>
-  </section>
+  
+  <section class="method-section">
+  <h2>Method</h2>
 
+  <div class="method-image">
+    <img
+      src="static/images/method.jpg"
+      alt="Overview of HERA"
+      onerror="this.style.display='none';"
+    >
+  </div>
+
+  <div class="caption">
+    <strong>Overview of HERA.</strong>
+    Hierarchical Layer Selection (HLS) estimates the leave-one-out layer risk
+    $\mathcal{R}_{\mathrm{layer}}$ and routes each episode to $\ell^\star$, selected from either
+    a single-layer candidate $\ell_{\mathrm{single}}$ or a local-fusion candidate
+    $\ell_{\mathrm{fusion}}$. At $\ell^\star$, Prior-Guided Regularization (PGR) calibrates
+    self-attention with entropy-gated Gaussian priors, while Pixel-wise Adaptive Calibration (PAC)
+    introduces residual logits $\ell_{\mathrm{sim}}$, $\ell_{\mathrm{attn}}$, and
+    $\ell_{\mathrm{img}}$, which are fused with the base logit in a select–regularize–calibrate
+    hierarchy. Here, $\mathcal{L}$, $\mathcal{U}$, and $\mathcal{H}$ denote the numbers of layers,
+    fusion candidates, and attention heads, respectively.
+  </div>
+</section>
+
+  
+  <section class="poster-section">
+  <h2>Poster</h2>
+
+  <div class="poster-image">
+    <img
+      src="static/images/poster.png"
+      alt="HERA Poster"
+      onerror="this.style.display='none';"
+    >
+  </div>
+</section>
+
+  
   <section>
     <h2>BibTeX</h2>
-    <pre>@article{ma2026hera,
-  title={Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation},
-  author={Ma, Junyuan and Xiang, Xunzhi and Li, Wenbin and Fan, Qi and Gao, Yang},
-  journal={arXiv preprint arXiv:2605.19340},
-  year={2026}
+    <pre>@inproceedings{ma2026selective,
+  title     = {Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation},
+  author    = {Ma, Junyuan and Xiang, Xunzhi and Li, Wenbin and Fan, Qi and Gao, Yang},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages     = {12385--12395},
+  year      = {2026}
 }</pre>
   </section>
 
