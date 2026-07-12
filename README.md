@@ -200,6 +200,6 @@ If you find HERA useful in your research, please cite our paper:
 
 ## Acknowledgement
 
-Our codebase is built upon the official implementations of [DR-Adapter](https://github.com/Suke-ming/DR-Adapter) and [SSP](https://github.com/fanq15/SSP).
+Our codebase is built upon the official implementations of [DR-Adapter](https://github.com/Suke-ming/DR-Adapter) and [SSP](https://github.com/fanq15/SSP). We sincerely thank the authors for making their code publicly available.
 
-We thank [PATNet](https://github.com/slei109/PATNet) and other FSS works for their great contributions.
+We also thank [PATNet](https://github.com/slei109/PATNet) and other FSS works for their valuable contributions to this research community.
