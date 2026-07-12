@@ -129,3 +129,13 @@ HERA-CDFSS/                                           # project root
 │
 └── codes/                                            # source code
 ```
+
+## Environment Setup
+To set up your environment, execute the following commands:
+```bash
+conda create -n hera python=3.10 -y
+conda activate hera
+
+pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0
+pip install scipy pandas matplotlib seaborn opencv-python scikit-image safetensors timm tensorflow tensorboardX
+```
