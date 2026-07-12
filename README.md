@@ -81,12 +81,12 @@ checkpoints/
 The following results are reported using DINOv3 under the standard 1-shot and 5-shot CD-FSS evaluation protocols.
 
 | Target Dataset | 1-Shot mIoU | 5-Shot mIoU |
-|:--------------:|:------- ----:|:------------:|
-| DeepGlobe      | 44.6%        | 63.4%        |
-| ISIC 2018      | 61.2%        | 73.6%        |
-| Chest X-ray    | 85.8%        | 87.9%        |
-| FSS-1000       | 81.6%        | 86.7%        |
-| **Average**    | **68.3%**    | **77.9%**    |
+|:--------------:|:-----------:|:-----------:|
+| DeepGlobe      | 44.6%       | 63.4%       |
+| ISIC 2018      | 61.2%       | 73.6%       |
+| Chest X-ray    | 85.8%       | 87.9%       |
+| FSS-1000       | 81.6%       | 86.7%       |
+| **Average**    | **68.3%**   | **77.9%**   |
 
 ---
 
