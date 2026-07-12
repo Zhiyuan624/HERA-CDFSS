@@ -125,8 +125,8 @@ HERA-CDFSS/                                           # project root
 │       ├── ab_wheel/                                 # category
 │       └── ...
 │
-├── checkpoints/                                      # pretrained model checkpoints
-│   └── dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+└── checkpoints/                                      # pretrained model checkpoints
+    └── dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
 ```
 
 ## Environment Setup
