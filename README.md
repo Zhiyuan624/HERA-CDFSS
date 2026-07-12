@@ -68,9 +68,7 @@ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
 ## Pretrained Models and Benchmark Results
 
 ### Models
-The default implementation uses **DINOv3 ViT-L/16** as the vision foundation model.
-
-- **Pretrained Weights:** [Download from Google Drive](https://drive.google.com/file/d/1Oni-R5xIDFv1-QcIFOoeJ1iG8ciS4Rv4/view?usp=sharing)
+The default implementation uses **DINOv3 ViT-L/16** [Download from Google Drive](https://drive.google.com/file/d/1Oni-R5xIDFv1-QcIFOoeJ1iG8ciS4Rv4/view?usp=sharing) as the vision foundation model.
 
 After downloading, place the checkpoint in the `checkpoints/` directory.
 
@@ -131,5 +129,3 @@ HERA-CDFSS/                                           # project root
 │
 └── codes/                                            # source code
 ```
-
-> Dataset and checkpoint files are not included in this repository. Please download them separately and update the corresponding paths in the evaluation scripts according to your local environment.
