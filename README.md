@@ -16,6 +16,8 @@ Official implementation of our CVPR 2026 paper [Selective, Regularized, and Cali
 
 The proposed **HERA** harnesses vision foundation models for cross-domain few-shot semantic segmentation through selective feature extraction, regularized adaptation, and calibrated attention refinement. It dynamically identifies task-relevant representations from intermediate layers, integrates complementary multi-level features, and improves prediction reliability under severe domain shifts while requiring only a few annotated support examples.
 
+---
+
 ## Data Preparation
 We evaluate HERA on the standard cross-domain few-shot semantic segmentation benchmarks. 
 
@@ -34,8 +36,6 @@ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
 ```
 
 - **SDS Extended Mask Annotations:** [Google Drive](https://drive.google.com/file/d/10zxG2VExoEZUeyQl_uXga2OWHjGeZaf2/view?usp=sharing)
-
----
 
 ### Target Domains
 
@@ -65,7 +65,11 @@ FSS-1000 is a large-scale few-shot segmentation dataset containing 1,000 object 
 - **Official Repository:** [FSS-1000](https://github.com/HKUSTCV/FSS-1000)
 - **Download:** [Google Drive](https://drive.google.com/file/d/16TgqOeI_0P41Eh3jWQlxlRXG9KIqtMgI/view)
 
+---
+
 ## Pretrained Models and Benchmark Results
+
+### Models
 The default implementation uses **DINOv3 ViT-L/16** as the vision foundation model.
 
 - **Pretrained Weights:** [Download from Google Drive](https://drive.google.com/file/d/1Oni-R5xIDFv1-QcIFOoeJ1iG8ciS4Rv4/view?usp=sharing)
