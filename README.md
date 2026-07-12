@@ -52,7 +52,7 @@ ISIC 2018 contains dermoscopic skin-lesion images with irregular boundaries and 
 - **Download:** [ISIC Archive](https://challenge.isic-archive.com/data#2018)  
   Registration and login may be required.
 - **Class Information:** `data/isic/class_id.csv`
-- **Preprocessing References:** [PATNet repository](https://github.com/slei109/PATNet)
+- **Preprocessing References:** [DR-Adapter repository](https://github.com/Matt-Su/DR-Adapter)
 
 #### Chest X-ray
 The Chest X-ray dataset contains radiographic images and lung masks, introducing substantial grayscale and structural domain shifts.
