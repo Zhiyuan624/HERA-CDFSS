@@ -1,16 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="HERA: Selective, Regularized, and Calibrated for Cross-Domain Few-Shot Semantic Segmentation.">
-  <meta name="keywords" content="HERA, CVPR 2026, semantic segmentation, few-shot segmentation, cross-domain few-shot semantic segmentation, vision foundation models">
+
+  <meta
+    name="description"
+    content="HERA: Selective, Regularized, and Calibrated for Cross-Domain Few-Shot Semantic Segmentation."
+  >
+
+  <meta
+    name="keywords"
+    content="HERA, CVPR 2026, semantic segmentation, few-shot segmentation, cross-domain few-shot semantic segmentation, vision foundation models"
+  >
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>HERA</title>
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
 
   <script>
     window.MathJax = {
@@ -22,59 +42,103 @@
       }
     };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 
   <style>
+    :root {
+      --content-width: 820px;
+      --page-padding: 24px;
+      --text-color: #222222;
+      --secondary-text: #444444;
+      --light-background: #f5f5f5;
+      --link-color: #3273dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Noto Sans', Arial, sans-serif;
       margin: 0;
-      color: #222;
+      color: var(--text-color);
       background: #ffffff;
+      font-family: 'Noto Sans', Arial, sans-serif;
       line-height: 1.6;
     }
 
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 24px;
+    a {
+      color: var(--link-color);
+      text-decoration: none;
     }
 
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 var(--page-padding);
+    }
+
+    .content-container {
+      width: 100%;
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+
+    /* =========================
+       Hero
+       ========================= */
+
     .hero {
+      padding: 74px 24px 48px;
       text-align: center;
-      padding: 74px 24px 36px;
+      background: #ffffff;
     }
 
     .title {
+      max-width: 980px;
+      margin: 0 auto 22px;
       font-family: 'Google Sans', 'Noto Sans', Arial, sans-serif;
       font-size: 42px;
       line-height: 1.18;
       font-weight: 700;
-      margin: 0 auto 22px;
-      max-width: 980px;
     }
 
     .conference {
+      margin: 18px 0 10px;
       font-size: 24px;
       font-weight: 600;
-      margin: 18px 0 10px;
     }
 
-   .authors a {
-  color: #3273dc;
-  text-decoration: none;
-}
-
-    .authors a:hover {
-      text-decoration: underline;
+    .authors {
+      font-size: 18px;
+      line-height: 1.8;
     }
-    
+
+    .authors a {
+      color: var(--link-color);
+    }
+
+    .affiliations {
+      margin-top: 4px;
+      color: #333333;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
     .affiliations a {
-      color: #333;
-      text-decoration: none;
-    }
-    
-    .affiliations a:hover {
-      text-decoration: underline;
+      color: #333333;
     }
 
     .buttons {
@@ -90,10 +154,10 @@
       border-radius: 999px;
       background: #2d2d2d;
       color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
       font-size: 16px;
-      transition: 0.18s ease;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.18s ease, transform 0.18s ease;
     }
 
     .button i {
@@ -107,88 +171,165 @@
       text-decoration: none;
     }
 
+    /* =========================
+       Shared sections
+       ========================= */
+
     section {
-      padding: 34px 0;
+      width: 100%;
+      padding: 58px var(--page-padding);
     }
 
-    h2 {
-      font-family: 'Google Sans', 'Noto Sans', Arial, sans-serif;
+    section h2 {
+      margin: 0 0 30px;
       text-align: center;
-      font-size: 30px;
-      margin: 0 0 18px;
+      font-family: 'Google Sans', 'Noto Sans', Arial, sans-serif;
+      font-size: 32px;
+      line-height: 1.2;
       font-weight: 700;
     }
 
-    .content {
-      max-width: 850px;
-      margin: 0 auto;
-      font-size: 18px;
-      color: #333;
-      text-align: justify;
+    /* =========================
+       Abstract
+       ========================= */
+
+    .abstract-section {
+      background: var(--light-background);
     }
 
-    .content p {
-      margin-top: 0;
-      margin-bottom: 16px;
+    .abstract-content {
+      width: 100%;
+      color: #333333;
+      font-size: 16px;
+      line-height: 1.72;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .abstract-content p {
+      margin: 0 0 18px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-content strong {
+      color: #222222;
+      font-weight: 700;
+    }
+
+    /* =========================
+       Method
+       ========================= */
+
+    .method-section {
+      background: #ffffff;
     }
 
     .method-image {
-      text-align: center;
-      margin-top: 22px;
+      width: 100%;
+      max-width: var(--content-width);
+      margin: 0 auto;
     }
 
     .method-image img {
-      width: 86%;
-      max-width: 820px;
-      min-width: 320px;
+      display: block;
+      width: 100%;
+      height: auto;
       border-radius: 8px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
     }
 
     .caption {
-      max-width: 760px;
-      margin: 14px auto 0;
+      width: 100%;
+      max-width: var(--content-width);
+      margin: 18px auto 0;
+      color: var(--secondary-text);
       font-size: 16px;
-      color: #444;
-      line-height: 1.55;
-      text-align: center;
+      line-height: 1.68;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .caption strong {
+      color: #333333;
+      font-weight: 700;
+    }
+
+    /* =========================
+       Poster
+       ========================= */
+
+    .poster-section {
+      background: var(--light-background);
+    }
+
+    .poster-image {
+      width: 100%;
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+
+    .poster-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    /* =========================
+       BibTeX
+       ========================= */
+
+    .bibtex-section {
+      background: #ffffff;
     }
 
     pre {
-      max-width: 850px;
+      width: 100%;
+      max-width: var(--content-width);
       margin: 0 auto;
-      padding: 20px;
-      background: #f5f5f5;
-      border-radius: 10px;
+      padding: 22px;
       overflow-x: auto;
-      font-size: 15px;
-      line-height: 1.45;
-      color: #222;
+      border-radius: 10px;
+      background: var(--light-background);
+      color: #222222;
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.55;
+      white-space: pre;
     }
 
-    a {
-      color: #3273dc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    /* =========================
+       Footer
+       ========================= */
 
     footer {
-      text-align: center;
-      color: #777;
+      padding: 48px 24px 34px;
+      background: #ffffff;
+      color: #777777;
       font-size: 14px;
-      padding: 52px 0 34px;
+      text-align: center;
     }
 
-    @media (max-width: 720px) {
+    /* =========================
+       Mobile
+       ========================= */
+
+    @media screen and (max-width: 720px) {
+      :root {
+        --page-padding: 18px;
+      }
+
       .hero {
-        padding-top: 48px;
+        padding: 48px 18px 36px;
       }
 
       .title {
         font-size: 31px;
+        line-height: 1.22;
       }
 
       .conference {
@@ -196,39 +337,45 @@
       }
 
       .authors {
-        font-size: 17px;
+        font-size: 16px;
       }
 
       .affiliations {
-        font-size: 15px;
-      }
-
-      .content {
-        font-size: 16px;
-        text-align: left;
-      }
-
-      .caption {
-        font-size: 15px;
+        font-size: 14px;
       }
 
       .button {
-        font-size: 15px;
         padding: 8px 16px;
+        font-size: 15px;
       }
 
-      .method-image img {
-        width: 100%;
-        min-width: 0;
+      section {
+        padding: 44px var(--page-padding);
       }
 
-      .title-logo {
-        display: inline-block;
-        height: 0.95em;
-        width: auto;
-        margin: 0 0.10em;
-        vertical-align: -0.12em;
-        object-fit: contain;
+      section h2 {
+        margin-bottom: 24px;
+        font-size: 27px;
+      }
+
+      .abstract-content,
+      .caption {
+        font-size: 15px;
+        line-height: 1.68;
+        text-align: left;
+      }
+
+      .method-image,
+      .poster-image,
+      .caption,
+      .content-container,
+      pre {
+        max-width: 100%;
+      }
+
+      pre {
+        padding: 18px;
+        font-size: 13px;
       }
     }
   </style>
@@ -236,136 +383,175 @@
 
 <body>
 
-<section class="hero">
-  <div class="container">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
 
-    <h1 class="title">
-      Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation
-    </h1>
+      <h1 class="title">
+        Selective, Regularized, and Calibrated:
+        Harnessing Vision Foundation Models for
+        Cross-Domain Few-Shot Semantic Segmentation
+      </h1>
 
-    <div class="conference">
-      CVPR 2026
+      <div class="conference">
+        CVPR 2026
+      </div>
+
+      <div class="authors">
+        <a href="mailto:majunyun23@mails.ucas.ac.cn">Junyuan Ma</a><sup>1,2</sup>,
+        <a href="mailto:xbxsxp@gmail.com">Xunzhi Xiang</a><sup>1</sup>,
+        <a href="mailto:liwenbin@nju.edu.cn">Wenbin Li</a><sup>1</sup>,
+        <a href="mailto:fanqi@nju.edu.cn">Qi Fan</a><sup>1&#9993;</sup>,
+        <a href="mailto:gaoy@nju.edu.cn">Yang Gao</a><sup>1</sup>
+      </div>
+
+      <div class="affiliations">
+        <sup>1</sup>
+        <a
+          href="https://www.nju.edu.cn/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Nanjing University
+        </a>
+
+        &nbsp;&nbsp;
+
+        <sup>2</sup>
+        <a
+          href="https://www.ucas.ac.cn/"
+          target="_blank"
+          rel="noopener noreferrer">
+          University of Chinese Academy of Sciences
+        </a>
+      </div>
+
+      <div class="buttons">
+
+        <a
+          class="button"
+          href="https://arxiv.org/abs/2605.19340"
+          target="_blank"
+          rel="noopener noreferrer">
+          <i class="ai ai-arxiv"></i>
+          <span>arXiv</span>
+        </a>
+
+        <a
+          class="button"
+          href="https://github.com/Zhiyuan624/HERA-CDFSS"
+          target="_blank"
+          rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+          <span>Code</span>
+        </a>
+
+        <a
+          class="button"
+          href="https://openaccess.thecvf.com/content/CVPR2026/papers/Ma_Selective_Regularized_and_Calibrated_Harnessing_Vision_Foundation_Models_for_Cross-Domain_CVPR_2026_paper.pdf"
+          target="_blank"
+          rel="noopener noreferrer">
+          <i class="fas fa-file-pdf"></i>
+          <span>Paper</span>
+        </a>
+
+      </div>
+
     </div>
+  </section>
 
-    <div class="authors">
-      <a href="mailto:majunyun23@mails.ucas.ac.cn">Junyuan Ma</a><sup>1,2</sup>,
-      <a href="mailto:xbxsxp@gmail.com">Xunzhi Xiang</a><sup>1</sup>,
-      <a href="mailto:liwenbin@nju.edu.cn">Wenbin Li</a><sup>1</sup>,
-      <a href="mailto:fanqi@nju.edu.cn">Qi Fan</a><sup>1&#9993;</sup>,
-      <a href="mailto:gaoy@nju.edu.cn">Yang Gao</a><sup>1</sup>
+
+  <!-- Abstract -->
+  <section class="abstract-section">
+    <div class="content-container">
+
+      <h2>Abstract</h2>
+
+      <div class="abstract-content">
+
+        <p>
+          Vision foundation models (VFMs) have achieved strong performance across various vision tasks.
+          However, it still remains challenging to apply VFMs for cross-domain few-shot segmentation
+          (CD-FSS), which segments objects of novel classes under domain shifts using only a few labeled
+          exemplars. The challenge is mainly driven by two factors: (1) limited labeled exemplars per novel
+          class relative to the scale of VFM pre-training, making the model prone to overfitting during
+          retraining, and (2) target-domain shifts underrepresented during pre-training, inducing
+          cross-domain inconsistency and layer-wise sensitivity.
+        </p>
+
+        <p>
+          To address these issues, we propose Hierarchical Exemplar Representation Adaptation
+          (<strong>HERA</strong>), a three-stage select–regularize–calibrate VFM-based segmentation
+          framework that learns effectively from limited labels and adapts to novel domains without
+          source-data retraining. We first design Hierarchical Layer Selection (HLS) to adaptively identify
+          the most informative VFM layer using a data-dependent Exemplar Transfer Risk (ETR) computed for
+          each candidate layer. Then, Prior-Guided Regularization (PGR) regularizes interactions on the
+          selected representation, yielding well-structured local signals for the subsequent stage.
+          Furthermore, Pixel-wise Adaptive Calibration (PAC) combines the selected representation with
+          the refined interaction maps to calibrate pixel-wise predictions, producing consistent masks.
+        </p>
+
+        <p>
+          Together, these stages form a hierarchical select–regularize–calibrate pipeline that guides
+          frozen VFM features in new domains while fine-tuning less than 2.7% of parameters at test time.
+          Extensive experiments show that HERA surpasses the state of the art by more than 4.1 mIoU
+          across multiple CD-FSS benchmarks.
+        </p>
+
+      </div>
     </div>
-    
-    <div class="affiliations">
-      <sup>1</sup><a href="https://www.nju.edu.cn/" target="_blank" rel="noopener noreferrer">Nanjing University</a>
-      &nbsp;&nbsp;
-      <sup>2</sup><a href="https://www.ucas.ac.cn/" target="_blank" rel="noopener noreferrer">University of Chinese Academy of Sciences</a>
-    </div>
+  </section>
 
-    <div class="buttons">
-      <a class="button" href="https://arxiv.org/abs/2605.19340" target="_blank" rel="noopener noreferrer">
-        <i class="ai ai-arxiv"></i>
-        <span>arXiv</span>
-      </a>
 
-      <a class="button" href="https://github.com/Zhiyuan624/HERA-CDFSS" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-github"></i>
-        <span>Code</span>
-      </a>
-
-      <a class="button"
-         href="https://openaccess.thecvf.com/content/CVPR2026/papers/Ma_Selective_Regularized_and_Calibrated_Harnessing_Vision_Foundation_Models_for_Cross-Domain_CVPR_2026_paper.pdf"
-         target="_blank"
-         rel="noopener noreferrer">
-        <i class="fas fa-file-pdf"></i>
-        <span>Paper</span>
-      </a>
-
-      
-    </div>
-
-  </div>
-</section>
-
-  
-<section class="abstract-section">
-  <div class="abstract-container">
-    <h2>Abstract</h2>
-
-    <div class="abstract-content">
-      <p>
-        Vision foundation models (VFMs) have achieved strong performance across various vision tasks.
-        However, it still remains challenging to apply VFMs for cross-domain few-shot segmentation
-        (CD-FSS), which segments objects of novel classes under domain shifts using only a few labeled
-        exemplars. The challenge is mainly driven by two factors: (1) limited labeled exemplars per novel
-        class relative to the scale of VFM pre-training, making the model prone to overfitting during
-        retraining, and (2) target-domain shifts underrepresented during pre-training, inducing
-        cross-domain inconsistency and layer-wise sensitivity.
-      </p>
-
-      <p>
-        To address these issues, we propose Hierarchical Exemplar Representation Adaptation
-        (<strong>HERA</strong>), a three-stage select–regularize–calibrate VFM-based segmentation
-        framework that learns effectively from limited labels and adapts to novel domains without
-        source-data retraining. We first design Hierarchical Layer Selection (HLS) to adaptively identify
-        the most informative VFM layer using a data-dependent Exemplar Transfer Risk (ETR) computed for
-        each candidate layer. Then, Prior-Guided Regularization (PGR) regularizes interactions on the
-        selected representation, yielding well-structured local signals for the subsequent stage.
-        Furthermore, Pixel-wise Adaptive Calibration (PAC) combines the selected representation with
-        the refined interaction maps to calibrate pixel-wise predictions, producing consistent masks.
-      </p>
-
-      <p>
-        Together, these stages form a hierarchical select–regularize–calibrate pipeline that guides
-        frozen VFM features in new domains while fine-tuning less than 2.7% of parameters at test time.
-        Extensive experiments show that HERA surpasses the state of the art by more than 4.1 mIoU
-        across multiple CD-FSS benchmarks.
-      </p>
-    </div>
-  </div>
-</section>
-
-  
+  <!-- Method -->
   <section class="method-section">
-  <h2>Method</h2>
 
-  <div class="method-image">
-    <img
-      src="static/images/method.jpg"
-      alt="Overview of HERA"
-      onerror="this.style.display='none';"
-    >
-  </div>
+    <h2>Method</h2>
 
-  <div class="caption">
-    <strong>Overview of HERA.</strong>
-    Hierarchical Layer Selection (HLS) estimates the leave-one-out layer risk
-    $\mathcal{R}_{\mathrm{layer}}$ and routes each episode to $\ell^\star$, selected from either
-    a single-layer candidate $\ell_{\mathrm{single}}$ or a local-fusion candidate
-    $\ell_{\mathrm{fusion}}$. At $\ell^\star$, Prior-Guided Regularization (PGR) calibrates
-    self-attention with entropy-gated Gaussian priors, while Pixel-wise Adaptive Calibration (PAC)
-    introduces residual logits $\ell_{\mathrm{sim}}$, $\ell_{\mathrm{attn}}$, and
-    $\ell_{\mathrm{img}}$, which are fused with the base logit in a select–regularize–calibrate
-    hierarchy. Here, $\mathcal{L}$, $\mathcal{U}$, and $\mathcal{H}$ denote the numbers of layers,
-    fusion candidates, and attention heads, respectively.
-  </div>
-</section>
+    <div class="method-image">
+      <img
+        src="static/images/method.jpg"
+        alt="Overview of HERA"
+        onerror="this.style.display='none';"
+      >
+    </div>
 
-  
+    <div class="caption">
+      <strong>Overview of HERA.</strong>
+      Hierarchical Layer Selection (HLS) estimates the leave-one-out layer risk
+      $\mathcal{R}_{\mathrm{layer}}$ and routes each episode to $\ell^\star$, selected from either
+      a single-layer candidate $\ell_{\mathrm{single}}$ or a local-fusion candidate
+      $\ell_{\mathrm{fusion}}$. At $\ell^\star$, Prior-Guided Regularization (PGR) calibrates
+      self-attention with entropy-gated Gaussian priors, while Pixel-wise Adaptive Calibration (PAC)
+      introduces residual logits $\ell_{\mathrm{sim}}$, $\ell_{\mathrm{attn}}$, and
+      $\ell_{\mathrm{img}}$, which are fused with the base logit in a select–regularize–calibrate
+      hierarchy. Here, $\mathcal{L}$, $\mathcal{U}$, and $\mathcal{H}$ denote the numbers of layers,
+      fusion candidates, and attention heads, respectively.
+    </div>
+
+  </section>
+
+
+  <!-- Poster -->
   <section class="poster-section">
-  <h2>Poster</h2>
 
-  <div class="poster-image">
-    <img
-      src="static/images/poster.png"
-      alt="HERA Poster"
-      onerror="this.style.display='none';"
-    >
-  </div>
-</section>
+    <h2>Poster</h2>
 
-  
-  <section>
+    <div class="poster-image">
+      <img
+        src="static/images/poster.png"
+        alt="HERA Poster"
+        onerror="this.style.display='none';"
+      >
+    </div>
+
+  </section>
+
+
+  <!-- BibTeX -->
+  <section class="bibtex-section">
+
     <h2>BibTeX</h2>
+
     <pre>@inproceedings{ma2026selective,
   title     = {Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation},
   author    = {Ma, Junyuan and Xiang, Xunzhi and Li, Wenbin and Fan, Qi and Gao, Yang},
@@ -373,13 +559,13 @@
   pages     = {12385--12395},
   year      = {2026}
 }</pre>
+
   </section>
 
-</div>
 
-<footer>
-  HERA · CVPR 2026
-</footer>
+  <footer>
+    HERA · CVPR 2026
+  </footer>
 
 </body>
 </html>
