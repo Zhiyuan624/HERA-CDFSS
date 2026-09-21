@@ -292,7 +292,7 @@ def test(model, dataloader, nshot, device, fusion_mlp, refine_module, args):
             model.extract_feats = (
                 lambda lid=lid: (
                     lambda img, bb, ids, **kwargs:
-                    model.extract_feat_dino_v0(
+                    model.extract_feat_dino_single(
                         img, model.backbone, [lid], attn_strategy='raw', **kwargs
                     )
                 )
@@ -345,7 +345,7 @@ def test(model, dataloader, nshot, device, fusion_mlp, refine_module, args):
 
             def make_extractor(feat_ids_for_mode, fusion_scores_list, beta=26.0):
                 def _extract(img, bb, ids, **kwargs):
-                    return model.extract_feat_dino_v1style_mlp(
+                    return model.extract_feat_dino_fusion(
                         img, model.backbone, feat_ids_for_mode,
                         apply_fc=False, fusion_mlp=None,
                         attn_strategy='raw',
