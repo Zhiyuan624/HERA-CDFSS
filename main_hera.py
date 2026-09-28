@@ -420,7 +420,7 @@ def test(model, dataloader, nshot, device, fusion_mlp, refine_module, args):
             model.extract_feats = (
                 lambda feat_ids=model.feat_ids, fs=fusion_scores, _attn=args.attn_strategy: (
                     lambda img, bb, ids, **kwargs:
-                    model.extract_feat_dino_v1style_mlp(
+                    model.model.extract_feat_dino_fusion(
                         img, model.backbone, feat_ids,
                         apply_fc=True, fusion_mlp=fusion_mlp,
                         attn_strategy=_attn, fusion_scores=fs, beta=26.0,
@@ -445,7 +445,7 @@ def test(model, dataloader, nshot, device, fusion_mlp, refine_module, args):
             model.extract_feats = (
                 lambda bl=best_layer, _attn=args.attn_strategy: (
                     lambda img, bb, ids, **kwargs:
-                    model.extract_feat_dino_v0(
+                    model.model.extract_feat_dino_single(
                         img, model.backbone, [bl],
                         attn_strategy=_attn, **kwargs
                     )
